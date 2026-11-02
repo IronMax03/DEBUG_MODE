@@ -1,4 +1,4 @@
-#include "Better_Debugging.hpp"
+#include "DEBUG_MODE.hpp"
 #include "customExceptions.hpp"
 #include <sstream>
 #include <string>

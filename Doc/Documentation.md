@@ -1,6 +1,6 @@
 # Debugging Functions
 
-This document outlines the functionalities provided by the Better_Debugging library, detailing the usage, behavior, and customization options.
+This document outlines the functionalities provided by the DEBUG_MODE library, detailing the usage, behavior, and customization options.
 
 # Table of Contents
 

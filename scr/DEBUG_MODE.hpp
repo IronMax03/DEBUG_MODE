@@ -1,5 +1,5 @@
-#ifndef BETTER_DEBUGGING
-#define BETTER_DEBUGGING
+#ifndef DEBUG_MODE_HPP
+#define DEBUG_MODE_HPP
 
 // imports
 #include <iostream>
@@ -24,7 +24,7 @@
 /**
  * Logs a message with a given label and optional content, regardless of `DEBUG_MODE`.
  * This method is not intended to be directly used.
- * 
+ *
  * @param name      The label for the message (e.g., "Initialization").
  * @param messages  The message content (optional).
  */
@@ -33,7 +33,7 @@ static void successMessage(std::string name, std::string messages);
 /**
  * Logs a message with a given label and optional content, regardless of `DEBUG_MODE`.
  * This method is not intended to be directly used.
- * 
+ *
  * @param name      The label for the message (e.g., "Initialization").
  * @param messages  The message content (optional).
  */
@@ -42,7 +42,7 @@ static void debugMessage(std::string name, std::string messages);
 /**
  * Logs a error with a given label and optional content, regardless of `DEBUG_MODE`.
  * This method is not intended to be directly used.
- * 
+ *
  * @param name      The label for the message (e.g., "Initialization").
  * @param messages  The message content (optional).
  */
@@ -51,12 +51,12 @@ static void Error_Message(std::string name, std::string messages);
 /**
  * Logs the variable's name, old value, new value, and address. Returns the new value.
  * This method is not intended to be directly used. Use VAR_ASSIGNMENT instead.
- * 
+ *
  * @param var        The current value of the variable.
  * @param newValue   The new value to assign.
  * @param varName    The name of the variable.
  * @param adresse    The address of the variable.
- * 
+ *
  * @return           The new value assigned to the variable.
  */
 static std::string debugVarAssign(std::string var, std::string newValue, std::string varName, std::string* adresse);
@@ -64,19 +64,19 @@ static std::string debugVarAssign(std::string var, std::string newValue, std::st
 /**
  * Logs the variable's name, old value, new value, and address. Returns the new value.
  * This method is not intended to be directly used. Use VAR_ASSIGNMENT instead.
- * 
+ *
  * @param var        The current value of the variable.
  * @param newValue   The new value to assign.
  * @param varName    The name of the variable.
  * @param adresse    The address of the variable.
- * 
+ *
  * @return           The new value assigned to the variable.
  */
 static int debugVarAssign(int  var, int newValue, std::string varName, int* adresse);
 
 /**
  * If values don't match, logs an error and throws an exception. Logs success if equal (in `DEBUG_MODE`).
- * 
+ *
  * @param expected  The expected std::string value.
  * @param given     The actual std::string value.
  * @param message   An optional message.
@@ -85,19 +85,20 @@ static void testCasePP(std::string expected, std::string given, std::string mess
 
 /**
  * If values don't match, logs an error and throws an exception. Logs success if equal (in `DEBUG_MODE`).
- * 
+ *
  * @param expected  The expected std::string value.
  * @param given     The actual std::string value.
  * @param message   An optional message.
  */
 static void testCasePP(int expected, int given, std::string message);
 
+// this make the compiler flag -DEBUG_MODE activate debug mode.
 #ifdef EBUG_MODE
     #define DEBUG_MODE
 #endif
 
 #ifdef DEBUG_MODE
- 
+
     /**
     * VAR_ASSIGNMENT(oldVar, newVar) - Wraps variable assignment with debugging. Logs the assignment.
     * @param oldVar Variable being assigned.
@@ -130,4 +131,4 @@ static void testCasePP(int expected, int given, std::string message);
     #define LOG(name, message)
 
 #endif
-#endif // #ifndef BETTER_DEBUGGING
+#endif // #ifndef DEBUG_MODE_HPP
